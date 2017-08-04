@@ -1,0 +1,39 @@
+{
+  "name": "universide_taipei",
+  "version": "1.0.0",
+  "description": "Universide Taipei 2017",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udn-newmedia/universide_taipei.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udn-newmedia/universide_taipei/issues"
+  },
+  "homepage": "https://github.com/udn-newmedia/universide_taipei#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "clean-webpack-plugin": "^0.1.16",
+    "cross-env": "^5.0.3",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.0",
+    "html-webpack-plugin": "^2.30.1",
+    "image-webpack-loader": "^3.3.1",
+    "postcss-import": "^10.0.0",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  }
+}

@@ -86,7 +86,7 @@ $(document).ready(function(){
     })
 
     var videoTrack = null
-    var index_now
+    var index_now = 1
 
     var bar_witdh = 0
 
@@ -96,6 +96,32 @@ $(document).ready(function(){
     const w = $(window).width()
     const h = $(window).height()
     var timetemp
+
+    if(w <= 768){
+        $('video').css('width', w + 'px')
+        $('#movie-4 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video1.mp4')
+        $('#movie-5 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video3.mp4')
+        $('#movie-6 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video4.mp4')
+        $('#movie-7 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video5.mp4')
+        $('#movie-8 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video6.mp4')
+        $('#movie-9 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video7.mp4')
+        $('#movie-12 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video8.mp4')
+        $('#movie-15 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video9.mp4')
+        $('#movie-16 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video10.mp4')
+        $('#movie-17 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video11.mp4')
+    }
+    else{
+        $('#movie-4 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video1.mp4')
+        $('#movie-5 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video3.mp4')
+        $('#movie-6 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video4.mp4')
+        $('#movie-7 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video5.mp4')
+        $('#movie-8 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video6.mp4')
+        $('#movie-9 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video7.mp4')
+        $('#movie-12 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video8.mp4')
+        $('#movie-15 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video9.mp4')
+        $('#movie-16 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video10.mp4')
+        $('#movie-17 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/video11.mp4')
+    }
 
     function drawVideoState(id){
 
@@ -147,18 +173,18 @@ $(document).ready(function(){
         if(index_now == 9){
             $('#video-state-contain .fa-repeat').css('opacity', 1)
         }
-        if(index_now == 11){
+        if(index_now == 12){
             $('#video-state-contain .fa-repeat').css('opacity', 1)
-            $('#section-11 .box-container-c').css('opacity', 1)
-            $('#section-11 .box-container-c').css('transform', 'translate(0, 0)')
-        }
-        if(index_now == 14){
-            $('#video-state-contain .fa-repeat').css('opacity', 1)
+            $('#section-12 .box-container-c').css('opacity', 1)
+            $('#section-12 .box-container-c').css('transform', 'translate(0, 0)')
         }
         if(index_now == 15){
             $('#video-state-contain .fa-repeat').css('opacity', 1)
         }
         if(index_now == 16){
+            $('#video-state-contain .fa-repeat').css('opacity', 1)
+        }
+        if(index_now == 17){
             $('#video-state-contain .fa-repeat').css('opacity', 1)
         }
     })
@@ -173,9 +199,9 @@ $(document).ready(function(){
             $('#section-4 .box-container-c').css('opacity', 0)
             $('#section-4 .box-container-c').css('transform', 'translate(0, 50px)')
         }
-        if(index_now == 11){
-            $('#section-11 .box-container-c').css('opacity', 0)
-            $('#section-11 .box-container-c').css('transform', 'translate(0, 50px)')
+        if(index_now == 12){
+            $('#section-12 .box-container-c').css('opacity', 0)
+            $('#section-12 .box-container-c').css('transform', 'translate(0, 50px)')
         }
     })
 
@@ -183,8 +209,6 @@ $(document).ready(function(){
     $('#video-state').prop('height', 50)
 
     video_state.lineWidth = 5
-
-    $('video').css('width', w + 'px')
 
     $('#nav-icon').click(function(){
         console.log(123)
@@ -217,6 +241,14 @@ $(document).ready(function(){
         $('#cover-v hr').css('width', '100%')
     }, 300)
 
+    $('#head').hover(function(){
+        $(this).css('opacity', 1)
+    }, function(){
+        if(index_now != 1){
+            $(this).css('opacity', 0)
+        }
+    })
+
     $('#fullpage').fullpage({
         navigation: false,    	
         scrollOverflow : true,
@@ -225,10 +257,13 @@ $(document).ready(function(){
             timetemp = setTimeout(function(){
                 $('#page-down .fa').css('animation-name', 'btnmove')
             }, 3000)
-            bar_witdh = (index-1) / 17 * 100
+            bar_witdh = (index-1) / 19 * 100
             $('#indicator-bar').css('width', bar_witdh+'%')
             if(index == 1){
                 console.log(index)
+                if(w > 768){
+                    $('#head').css('opacity', 1)
+                }
                 $('#cover-title').css('opacity', 1)
                 $('#cover-title').css('transform', 'translate(0, 0)')
                 $('#cover-subtitle').css('opacity', 1)
@@ -248,6 +283,7 @@ $(document).ready(function(){
                 $('#section-3 .box-container').css('transform', 'translate(0, 50px)')
             }
             if(index == 3){
+                $('#fixed-back').css('background-color', '#000000')
                 $('#section-3 .box-container').css('opacity', 1)
                 $('#section-3 .box-container').css('transform', 'translate(0, 0)')
             }
@@ -293,32 +329,27 @@ $(document).ready(function(){
                 videoTrack = setInterval(function(){
                     drawVideoState(9)
                 }, 100)
-                $('#section-10 .box-container').css('transform', 'translate(0, 50px)')
             }
             if(index == 10){
-                $('#section-10 .box-container').css('opacity', 1)
-                $('#section-10 .box-container').css('transform', 'translate(0, 0)')
+                $('#section-11 .box-container').css('transform', 'translate(0, 50px)')
             }
             if(index == 11){
-                $('#section-10 .box-container').css('transform', 'translate(0, 50px)')
-                $('#movie-11').get(0).play()
-                $('#video-state').css('opacity', 1)
-                videoTrack = setInterval(function(){
-                    drawVideoState(11)
-                }, 100)
+                $('#section-11 .box-container').css('opacity', 1)
+                $('#section-11 .box-container').css('transform', 'translate(0, 0)')
             }
             if(index == 12){
-
-            }
-            if(index == 13){
-                
-            }
-            if(index == 14){
-                $('#movie-14').get(0).play()
+                $('#section-11 .box-container').css('transform', 'translate(0, 50px)')
+                $('#movie-12').get(0).play()
                 $('#video-state').css('opacity', 1)
                 videoTrack = setInterval(function(){
-                    drawVideoState(14)
+                    drawVideoState(12)
                 }, 100)
+            }
+            if(index == 13){
+
+            }
+            if(index == 14){
+                
             }
             if(index == 15){
                 $('#movie-15').get(0).play()
@@ -334,22 +365,31 @@ $(document).ready(function(){
                     drawVideoState(16)
                 }, 100)
             }
-            if(index == 18){
-                $('#page-down').css('opacity', 1)
+            if(index == 17){
+                $('#movie-17').get(0).play()
+                $('#video-state').css('opacity', 1)
+                videoTrack = setInterval(function(){
+                    drawVideoState(17)
+                }, 100)
             }
             if(index == 19){
+                $('#page-down').css('opacity', 1)
+            }
+            if(index == 20){
                 $('#comment-pannel').toggleClass('open')
             }
         },
         onLeave: function(index, nextIndex, direction){
             $('#page-down .fa').css('animation-name', '')
             clearTimeout(timetemp)
+            if(index == 1){
+                $('#head').css('opacity', 0)
+            }
             if(index == 2 && direction == 'down'){
-                ctx.clearRect(0, 0, 375, 667)
                 $('#section-3 .orange-back').css('height', '100vh')
             }
             if(index == 3 && direction == 'up'){
-                ctx.drawImage(img, 0, 0, 375, 667, 0, 0, 375, 667);
+                $('#fixed-back').css('background-color', 'transparent')
             }
             if(index == 3){
                 $('#section-3 .box-container').css('opacity', 0)
@@ -385,28 +425,25 @@ $(document).ready(function(){
                 $('#video-state').css('opacity', 0)
                 $('#video-state-contain .fa-repeat').css('opacity', 0)
                 clearInterval(videoTrack)
-                $('#section-10 .orange-back').css('height', '100vh')
             }
             if(index == 10){
-                 $('#section-10 .box-container').css('opacity', 0)
+                $('#section-11 .orange-back').css('height', '100vh')
             }
             if(index == 11){
-                $('#video-state').css('opacity', 0)
-                $('#video-state-contain .fa-repeat').css('opacity', 0)
-                $('#section-11 .box-container-c').css('opacity', 0)
-                $('#section-11 .box-container-c').css('transform', 'translate(0, 50px)')
-                clearInterval(videoTrack)
+                 $('#section-11 .box-container').css('opacity', 0)
             }
             if(index == 12){
-            
+                $('#video-state').css('opacity', 0)
+                $('#video-state-contain .fa-repeat').css('opacity', 0)
+                $('#section-12 .box-container-c').css('opacity', 0)
+                $('#section-12 .box-container-c').css('transform', 'translate(0, 50px)')
+                clearInterval(videoTrack)
             }
             if(index == 13){
             
             }
             if(index == 14){
-                $('#video-state').css('opacity', 0)
-                $('#video-state-contain .fa-repeat').css('opacity', 0)
-                clearInterval(videoTrack)
+            
             }
             if(index == 15){
                 $('#video-state').css('opacity', 0)
@@ -418,10 +455,15 @@ $(document).ready(function(){
                 $('#video-state-contain .fa-repeat').css('opacity', 0)
                 clearInterval(videoTrack)
             }
-            if(index == 18 && direction == 'down'){
+            if(index == 17){
+                $('#video-state').css('opacity', 0)
+                $('#video-state-contain .fa-repeat').css('opacity', 0)
+                clearInterval(videoTrack)
+            }
+            if(index == 19 && direction == 'down'){
                 $('#page-down').css('opacity', 0)
             }
-            if(index == 19){
+            if(index == 20){
                 $('#msg').toggleClass('close')
             }
 

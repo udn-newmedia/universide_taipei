@@ -16,6 +16,7 @@ body{
 	background-repeat: no-repeat;
 	background-position: center;
     background-size: 100% auto;
+    color: #000000;
 }
 
 .mt-0{
@@ -558,6 +559,10 @@ video{
     transform: translate(0, 50px);
 }
 
+.image-contain{
+    margin: 16px 0;
+}
+
 @media screen and (max-width: 768px){
     #taekwondo{
         background-image: url('../assets/bg.jpg');
@@ -639,8 +644,12 @@ video{
 		background-image: url('../assets/bg-web.png');
 		background-size: auto 100%;
     }
+    #gymnastics{
+        background-image: url('../assets/gym-bg-web.png');
+        background-size: auto 100%;
+    }
     #cover-box{
-	    flex-grow: 3; 
+	    flex-grow: 4; 
     }
     #cover-box-2{
         flex-grow: 1;
@@ -654,7 +663,7 @@ video{
         font-size: 70px;
         display: inline-block;
 		letter-spacing: -1.4px;
-		margin-top: 12px;
+		margin-top: 1px;
     }
 
     #cover-subtitle{
@@ -692,7 +701,7 @@ video{
         z-index: 10001;
     }
     #msg.close{
-        opacity: 1;
+        opacity: 0.7;
     }
 	.fa-comment {
     	font-size: 30px;
@@ -708,7 +717,7 @@ video{
 		float: none;
 		margin-top: 10px;
 	}
-	#section-4 .container, #section-5 .container, #section-6 .container, #section-9 .container, #section-11 .container, #section-12 .container, #section-14 .container, #section-16 .container{
+	#taekwondo #section-4 .container, #taekwondo #section-5 .container, #taekwondo #section-6 .container, #taekwondo #section-9 .container, #taekwondo #section-11 .container, #taekwondo #section-12 .container, #taekwondo #section-14 .container, #taekwondo #section-16 .container{
 		width: 600px;
 	}
 	.fl{
@@ -780,7 +789,33 @@ video{
     #relate-contain p>br{
         line-height: 24px;
     }
-    
+    .box-container-c{
+        width: 800px;
+    }
+    .ab-center{
+        width: 800px;
+        left: 50%;
+        margin-left: -400px;
+    }
+    #gymnastics h1, #gymnastics #cover-subtitle{
+        font-size: 60px;
+    }
+    #gymnastics .fl{
+        width: 375px;
+    }
+    #gymnastics .fr{
+        width: 361px;
+    }
+    .fl-s{
+        float: left;
+        width: 400px;
+        padding-top: 15px;
+    }
+    .fr-s{
+        float: right;
+        width: 400px;
+        padding-top: 15px;
+    }
 }
 
 @media screen and (min-width: 1281px){
@@ -789,8 +824,12 @@ video{
         background-image: url('../assets/bg-web.png');
         /* background-size: 100% 100%; */
     }
+    #gymnastics{
+        background-image: url('../assets/gym-bg-web.png');
+        /* background-size: auto 100%; */
+    }
     #cover-box{
-	    flex-grow: 3; 
+	    flex-grow: 4; 
     }
     #cover-box-2{
         flex-grow: 1;
@@ -804,7 +843,7 @@ video{
         font-size: 70px;
         display: inline-block;
 		letter-spacing: -1.4px;
-		margin-top: 12px;
+		margin-top: 1px;
     }
 
     #cover-subtitle{
@@ -821,84 +860,7 @@ video{
         font-size: 25px;
         padding-bottom: 16px;
 	}
-	.squre{
-		width: 50px;
-		height: 50px;
-	}
-
-	#nav-icon{
-		width: 50px;
-		height: 50px;
-		position: relative;
-		-webkit-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		transform: rotate(0deg);
-		-webkit-transition: .5s ease-in-out;
-		-moz-transition: .5s ease-in-out;
-		-o-transition: .5s ease-in-out;
-		transition: .5s ease-in-out;
-		cursor: pointer;
-		opacity: 1;
-	}
-
-	#nav-icon span{
-		display: block;
-		position: absolute;
-		height: 1px;
-		width: calc(100% - 10px);
-		margin: 0 auto;
-		background: #FFFFFF;
-		border-radius: 2px;
-		opacity: 1;
-		left: 0%;
-		-webkit-transform: rotate(0deg);
-		-moz-transform: rotate(0deg);
-		-o-transform: rotate(0deg);
-		transform: rotate(0deg);
-		-webkit-transition: .25s ease-in-out;
-		-moz-transition: .25s ease-in-out;
-		-o-transition: .25s ease-in-out;
-		transition: .25s ease-in-out;
-	}
-
-	#nav-icon span:nth-child(1) {
-		top: 12px;
-	}
-
-	#nav-icon span:nth-child(2),#nav-icon span:nth-child(3) {
-		top: 24px;
-	}
-
-	#nav-icon span:nth-child(4) {
-		top: 36px;
-	}
-
-	#nav-icon.open span:nth-child(1) {
-		top: 20px;
-		width: 0%;
-		left: 50%;
-	}
-
-	#nav-icon.open span:nth-child(2) {
-		-webkit-transform: rotate(45deg);
-		-moz-transform: rotate(45deg);
-		-o-transform: rotate(45deg);
-		transform: rotate(45deg);
-	}
-
-	#nav-icon.open span:nth-child(3) {
-		-webkit-transform: rotate(-45deg);
-		-moz-transform: rotate(-45deg);
-		-o-transform: rotate(-45deg);
-		transform: rotate(-45deg);
-	}
-
-	#nav-icon.open span:nth-child(4) {
-		top: 24px;
-		width: 0%;
-		left: 50%;
-	}
+	
 	.container{
 		width: 800px;
 	}
@@ -915,10 +877,14 @@ video{
 	}
 
 	#msg{
-		top: 70px;
-	}
+        top: 8px;
+        z-index: 10001;
+    }
+    #msg.close{
+        opacity: 0.7;
+    }
 	.fa-comment {
-    	font-size: 50px;
+    	font-size: 30px;
 	}
 	.share-block{
 		margin-top: 50px;
@@ -931,7 +897,7 @@ video{
 		float: none;
 		margin-top: 10px;
 	}
-	#section-4 .container, #section-5 .container, #section-6 .container, #section-9 .container, #section-11 .container, #section-12 .container, #section-14 .container, #section-16 .container{
+	#taekwondo #section-4 .container, #taekwondo #section-5 .container, #taekwondo #section-6 .container, #taekwondo #section-9 .container, #taekwondo #section-11 .container, #taekwondo #section-12 .container, #taekwondo #section-14 .container, #taekwondo #section-16 .container{
 		width: 600px;
 	}
 	.fl{
@@ -953,5 +919,81 @@ video{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    #hbutton{
+        display: none;
+    }
+    #head{
+        opacity: 1;
+    }
+    #head:hover{
+        height: 170px;
+    }
+    #head:hover .banner-contain{
+        top: 16px;
+    }
+    #head:hover .banner-contain img{
+        height: 111px;
+    }
+    #comment-pannel{
+        width: 40%;
+    }
+    .banner-contain{
+        height: 50px;
+        position: absolute;
+        top: -24px;
+        right: 70px;
+        transition: all 0.7s ease;
+    }
+    .banner-contain img{
+        height: 0;
+        transition: all 0.7s ease;
+    }
+    .banner{
+        width: 156px;
+        float: left;
+        margin-left: 25px;
+    }
+    .banner-text{
+        font-size: 17px;
+        font-weight: bold;
+        line-height: 2;
+        letter-spacing: -0.3px;
+        text-align: left;
+        color: #57543d;
+        margin-top: 9px;
+    }
+    #relate-contain p{
+        margin-top: 5px;
+    }
+    #relate-contain p>br{
+        line-height: 24px;
+    }
+    .box-container-c{
+        width: 800px;
+    }
+    .ab-center{
+        width: 800px;
+        left: 50%;
+        margin-left: -400px;
+    }
+    #gymnastics h1, #gymnastics #cover-subtitle{
+        font-size: 60px;
+    }
+    #gymnastics .fl{
+        width: 375px;
+    }
+    #gymnastics .fr{
+        width: 361px;
+    }
+    .fl-s{
+        float: left;
+        width: 400px;
+        padding-top: 15px;
+    }
+    .fr-s{
+        float: right;
+        width: 400px;
+        padding-top: 15px;
     }
 }

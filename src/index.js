@@ -118,6 +118,12 @@ $(document).ready(function(){
         $('#cover-v hr').css('width', '100%')
     }, 300)
 
+     $('#head').hover(function(){
+        $(this).css('opacity', 1)
+    }, function(){
+        $(this).css('opacity', 0)
+    })
+
     $('#fullpage').fullpage({
         navigation: false,    	
 		scrollOverflow : true,

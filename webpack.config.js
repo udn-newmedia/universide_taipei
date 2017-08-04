@@ -10,10 +10,7 @@ module.exports = {
     entry: {
         bundle: './src/index.js',
         gymnastics: './src/gymnastics.js',
-        jquery: ['jquery'],
-        fullpagejs: ['fullpage.js'],
-        lazysizes: ['lazysizes'],
-        bodymovin: ['bodymovin']
+        vendor: ["jquery"],
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -79,17 +76,18 @@ module.exports = {
             debug: !prod_state,
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['bodymovin' ,'lazysizes', 'fullpagejs', 'jquery'],       
+            name: "vendor"
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html',
-            chunks: ['lazysizes', 'jquery', 'fullpagejs', 'bundle']
+            chunks: ['vendor', 'bundle'],
+            // chunksSortMode: 'manual'
         }),
         new HtmlWebpackPlugin({
             template: 'src/gymnastics.html',
             filename: 'gymnastics.html',
-            chunks: ['bodymovin', 'lazysizes', 'jquery', 'fullpagejs', 'gymnastics']
+            chunks: ['vendor', 'gymnastics'],
         }),
         new ExtractTextWebpackPlugin({
             filename: 'css/[name].[contenthash].css'

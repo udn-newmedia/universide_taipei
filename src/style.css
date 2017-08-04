@@ -584,6 +584,9 @@ video{
     .f-video-contain{
         margin-bottom: 16px;
     }
+    .f-video-contain .img-say{
+        padding-left: 20px;
+    }
     #cover-title{
         font-size: 26px;
         transition: all 0.7s ease;

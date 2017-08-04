@@ -9,11 +9,14 @@ let prod_state = process.env.NODE_ENV==="production"
 module.exports = {
     entry: {
         bundle: './src/index.js',
-        // gymnastics: './src/gymnastics.js'
+        // gymnastics: './src/gymnastics.js',
+        jquery: ['jquery'],
+        fullpagejs: ['fullpage.js'],
+        lazysizes: ['lazysizes']
     },
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'js/[name].[hash].js'
+        filename: 'js/[name].[chunkhash].js'
     },
     module:{
         rules: [
@@ -74,10 +77,13 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             debug: !prod_state,
         }),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: ['lazysizes', 'fullpagejs', 'jquery'],       
+        }),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html',
-            chunks: ['bundle']
+            chunks: ['lazysizes', 'jquery', 'fullpagejs', 'bundle']
         }),
         // new HtmlWebpackPlugin({
         //     template: 'src/gymnastics.html',

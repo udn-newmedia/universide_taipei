@@ -3,7 +3,7 @@ import $ from 'jquery'
 import 'fullpage.js'
 import 'lazysizes'
 
-var progress = [null, null, null, null, null, null, null, null, null];
+var progress = [null, null, null, null, null, null, null, null, null, null];
 var movie_progress = 0;
 
 function moviePlay(id){
@@ -75,23 +75,15 @@ $(document).ready(function(){
 
     var bar_witdh = 0
 
-    // $('#movie-4').attr('poster', poster4)
-    // $('#movie-5').attr('poster', poster5)
-    // $('#movie-8').attr('poster', poster8)
-    // $('#movie-10').attr('poster', poster10)
-    // $('#movie-11').attr('poster', poster11)
-    // $('#movie-13').attr('poster', poster13)
-    // $('#movie-15').attr('poster', poster15)
-
-    // $('#arrowicon').attr('src', arrowIcon)
-
 	if(w <= 768){
 		$('video').css('width', w + 'px')
-		$('video').css('height', w * 600 / 720 + 'px')
+        $('video').css('height', w * 600 / 720 + 'px')
+        $('#movie-6').css('height', w * 400 / 720 + 'px')
 	}
 	else{
 		$('video').css('width', '600px')
-		$('video').css('height', '500px')
+        $('video').css('height', '500px')
+        $('#movie-6').css('height', '333.33px')
 	}
     
 
@@ -129,15 +121,17 @@ $(document).ready(function(){
     $('#fullpage').fullpage({
         navigation: false,    	
 		scrollOverflow : true,
-		verticalCentered: true,
     	afterLoad: function(anchorLink, index){
+           
             timetemp = setTimeout(function(){
                 $('#page-down .fa').css('animation-name', 'btnmove')
             }, 3000)
-            bar_witdh = (index-1) / 17 * 100
+            bar_witdh = (index-1) / 18 * 100
             $('#indicator-bar').css('width', bar_witdh+'%')
             if(index == 1){
-                
+                if(w > 768){
+                    $('#head').css('opacity', 1)
+                }
                 $('#cover-title').css('opacity', 1)
                 $('#cover-title').css('transform', 'translate(0, 0)')
                 $('#cover-subtitle').css('opacity', 1)
@@ -171,70 +165,80 @@ $(document).ready(function(){
     		if(index == 5){
                 moviePlay(5)
                 $('#section-4 .popup').css('transform', 'translate(0, 100px)')
-    		}
-    		if(index == 6){
-                $('#section-5 .popup').css('transform', 'translate(0, 100px)')
-                $('#section-7 .box-container').css('transform', 'translate(0, 50px)')
+                $('#section-6 .popup').css('transform', 'translate(0, 100px)')
             }
-            if(index == 7){
-                $('#section-7 .box-container').css('opacity', 1)
-                $('#section-7 .box-container').css('transform', 'translate(0, 0)')
-                $('#section-8 .popup').css('transform', 'translate(0, 100px)')
+            if(index == 6){
+                moviePlay(6)
+                $('#section-5 .popup').css('transform', 'translate(0, 100px)')
+            }
+    		if(index == 7){
+                $('#section-8 .box-container').css('transform', 'translate(0, 50px)')
+                $('#section-6 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 8){
-                $('#section-7 .box-container').css('transform', 'translate(0, 50px)')
-                moviePlay(8)
-                $('#section-9 .box-container').css('transform', 'translate(0, 50px)')
+                $('#section-8 .box-container').css('opacity', 1)
+                $('#section-8 .box-container').css('transform', 'translate(0, 0)')
+                $('#section-9 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 9){
-                $('#section-9 .box-container').css('opacity', 1)
-                $('#section-9 .box-container').css('transform', 'translate(0, 0)')
-                $('#section-8 .popup').css('transform', 'translate(0, 100px)')
-                $('#section-10 .popup').css('transform', 'translate(0, 100px)')
+                $('#section-8 .box-container').css('transform', 'translate(0, 50px)')
+                moviePlay(9)
+                $('#section-10 .box-container').css('transform', 'translate(0, 50px)')
             }
             if(index == 10){
-                $('#section-9 .box-container').css('transform', 'translate(0, 50px)')
-                moviePlay(10)
+                $('#section-10 .box-container').css('opacity', 1)
+                $('#section-10 .box-container').css('transform', 'translate(0, 0)')
+                $('#section-9 .popup').css('transform', 'translate(0, 100px)')
                 $('#section-11 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 11){
+                $('#section-10 .box-container').css('transform', 'translate(0, 50px)')
                 moviePlay(11)
-                $('#section-10 .popup').css('transform', 'translate(0, 100px)')
+                $('#section-12 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 12){
-                $('#section-12 .box-container').css('opacity', 1)
-                $('#section-12 .box-container').css('transform', 'translate(0, 0)')
+                moviePlay(12)
                 $('#section-11 .popup').css('transform', 'translate(0, 100px)')
-            }
-            if(index == 13){
-                $('#section-12 .box-container').css('transform', 'translate(0, 50px)')
-                moviePlay(13)
                 $('#section-13 .box-container').css('transform', 'translate(0, 50px)')
             }
+            if(index == 13){
+                $('#section-13 .box-container').css('opacity', 1)
+                $('#section-13 .box-container').css('transform', 'translate(0, 0)')
+                $('#section-12 .popup').css('transform', 'translate(0, 100px)')
+            }
             if(index == 14){
-                $('#section-14 .box-container').css('opacity', 1)
-                $('#section-14 .box-container').css('transform', 'translate(0, 0)')
-                $('#section-15 .popup').css('transform', 'translate(0, 100px)')
+                $('#section-13 .box-container').css('transform', 'translate(0, 50px)')
+                moviePlay(14)
+                $('#section-14 .box-container').css('transform', 'translate(0, 50px)')
             }
             if(index == 15){
-                $('#section-14 .box-container').css('transform', 'translate(0, 50px)')
-                moviePlay(15)
+                $('#section-15 .box-container').css('opacity', 1)
+                $('#section-15 .box-container').css('transform', 'translate(0, 0)')
+                $('#section-16 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 16){
-                $('#section-15 .popup').css('transform', 'translate(0, 100px)')
+                $('#section-15 .box-container').css('transform', 'translate(0, 50px)')
+                moviePlay(16)
             }
             if(index == 17){
-                $('#page-down').css('opacity', 1)
+                $('#section-16 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 18){
+                $('#page-down').css('opacity', 1)
+            }
+            if(index == 19){
                 $('#comment-pannel').toggleClass('open')
             }
 
         },
         onLeave: function(index, nextIndex, direction){
+            
             console.log(index, nextIndex, direction)
             $('#page-down .fa').css('animation-name', '')
             clearTimeout(timetemp)
+            if(index == 1){
+                $('#head').css('opacity', 0)
+            }
             if(index == 2 && direction == 'up'){
                 // $('#page-down').css('opacity', 0)
             }
@@ -256,75 +260,80 @@ $(document).ready(function(){
             if(index == 5){
                 moviePause(5)
                 $('#section-4 .popup').css('transform', 'translate(0, 0)')
+                $('#section-6 .popup').css('transform', 'translate(0, 0)')
             }
             if(index == 6){
+                moviePause(6)
                 $('#section-5 .popup').css('transform', 'translate(0, 0)')
             }
-            if(index == 6 && direction == 'down'){
-                $('#section-7 .yellow-back').css('height', '100vh')
-            }
-            if(index == 7 && direction == 'up'){
-                $('#section-7 .yellow-back').css('height', 0)
-            }
             if(index == 7){
-                $('#section-7 .box-container').css('opacity', 0)
-                $('#section-8 .popup').css('transform', 'translate(0, 0)')
+                $('#section-6 .popup').css('transform', 'translate(0, 0)')
             }
-            if(index == 8 && direction == 'down'){
-                $('#section-9 .yellow-back').css('height', '100vh')
+            if(index == 7 && direction == 'down'){
+                $('#section-8 .yellow-back').css('height', '100vh')
+            }
+            if(index == 8 && direction == 'up'){
+                $('#section-8 .yellow-back').css('height', 0)
             }
             if(index == 8){
-                moviePause(8)
-                $('#section-8 .popup').css('transform', 'translate(0, 0)')
+                $('#section-8 .box-container').css('opacity', 0)
+                $('#section-9 .popup').css('transform', 'translate(0, 0)')
             }
-            if(index == 9 && direction == 'up'){
-                $('#section-9 .yellow-back').css('height', 0)
+            if(index == 9 && direction == 'down'){
+                $('#section-10 .yellow-back').css('height', '100vh')
             }
             if(index == 9){
-                $('#section-9 .box-container').css('opacity', 0)
-                $('#section-8 .popup').css('transform', 'translate(0, 0)')
-                $('#section-10 .popup').css('transform', 'translate(0, 0)')
+                moviePause(9)
+                $('#section-9 .popup').css('transform', 'translate(0, 0)')
+            }
+            if(index == 10 && direction == 'up'){
+                $('#section-10 .yellow-back').css('height', 0)
             }
             if(index == 10){
-                moviePause(10)
+                $('#section-10 .box-container').css('opacity', 0)
+                $('#section-9 .popup').css('transform', 'translate(0, 0)')
                 $('#section-11 .popup').css('transform', 'translate(0, 0)')
-            }
-            if(index == 11 && direction == 'down'){
-                $('#section-12 .yellow-back').css('height', '100vh')
             }
             if(index == 11){
                 moviePause(11)
-                $('#section-10 .popup').css('transform', 'translate(0, 0)')
+                $('#section-12 .popup').css('transform', 'translate(0, 0)')
             }
-            if(index == 12 && direction == 'up'){
-                $('#section-12 .yellow-back').css('height', 0)
+            if(index == 12 && direction == 'down'){
+                $('#section-13 .yellow-back').css('height', '100vh')
             }
             if(index == 12){
-                $('#section-12 .box-container').css('opacity', 0)
+                moviePause(12)
                 $('#section-11 .popup').css('transform', 'translate(0, 0)')
-                $('#section-13 .popup').css('transform', 'translate(0, 0)')
+            }
+            if(index == 13 && direction == 'up'){
+                $('#section-13 .yellow-back').css('height', 0)
             }
             if(index == 13){
-                moviePause(13)
-                $('#section-14 .yellow-back').css('height', '100vh')
-            }
-            if(index == 14 && direction == 'up'){
-                $('#section-14 .yellow-back').css('height', 0)
+                $('#section-13 .box-container').css('opacity', 0)
+                $('#section-12 .popup').css('transform', 'translate(0, 0)')
+                $('#section-14 .popup').css('transform', 'translate(0, 0)')
             }
             if(index == 14){
-                $('#section-14 .box-container').css('opacity', 0)
-                $('#section-15 .popup').css('transform', 'translate(0, 0)')
+                moviePause(14)
+                $('#section-15 .yellow-back').css('height', '100vh')
+            }
+            if(index == 15 && direction == 'up'){
+                $('#section-15 .yellow-back').css('height', 0)
             }
             if(index == 15){
-                moviePause(15)
+                $('#section-15 .box-container').css('opacity', 0)
+                $('#section-16 .popup').css('transform', 'translate(0, 0)')
             }
             if(index == 16){
-                $('#section-15 .popup').css('transform', 'translate(0, 0)')
+                moviePause(16)
             }
-            if(index == 17 && direction == 'down'){
+            if(index == 17){
+                $('#section-16 .popup').css('transform', 'translate(0, 0)')
+            }
+            if(index == 18 && direction == 'down'){
                 $('#page-down').css('opacity', 0)
             }
-            if(index == 18){
+            if(index == 19){
                 $('#msg').toggleClass('close')
             }
             

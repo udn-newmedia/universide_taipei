@@ -9,10 +9,11 @@ let prod_state = process.env.NODE_ENV==="production"
 module.exports = {
     entry: {
         bundle: './src/index.js',
-        // gymnastics: './src/gymnastics.js',
+        gymnastics: './src/gymnastics.js',
         jquery: ['jquery'],
         fullpagejs: ['fullpage.js'],
-        lazysizes: ['lazysizes']
+        lazysizes: ['lazysizes'],
+        bodymovin: ['bodymovin']
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -78,18 +79,18 @@ module.exports = {
             debug: !prod_state,
         }),
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['lazysizes', 'fullpagejs', 'jquery'],       
+            name: ['bodymovin' ,'lazysizes', 'fullpagejs', 'jquery'],       
         }),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html',
             chunks: ['lazysizes', 'jquery', 'fullpagejs', 'bundle']
         }),
-        // new HtmlWebpackPlugin({
-        //     template: 'src/gymnastics.html',
-        //     filename: 'gymnastics.html',
-        //     chunks: ['gymnastics']
-        // }),
+        new HtmlWebpackPlugin({
+            template: 'src/gymnastics.html',
+            filename: 'gymnastics.html',
+            chunks: ['bodymovin', 'lazysizes', 'jquery', 'fullpagejs', 'gymnastics']
+        }),
         new ExtractTextWebpackPlugin({
             filename: 'css/[name].[contenthash].css'
         })

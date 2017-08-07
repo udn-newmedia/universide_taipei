@@ -39,6 +39,10 @@ body{
     color: #FFFFFF;
 }
 
+.blue{
+    color: #003DA6;
+}
+
 #fixed-back{
 	width: 100%;
 	height: 100%;
@@ -116,6 +120,11 @@ video{
     background-color: #FFB81F;
 }
 
+.light-blue-back{
+    background: #5bc2dc;
+    height: 0;
+}
+
 .gray-back{
     background: rgba(0, 0, 0, 0.8);
 } 
@@ -133,6 +142,14 @@ video{
     background-color: #FFCE00;
 }
 
+.menu-blue-back{
+    background-color: #51A7E3;
+}
+
+#head.menu-blue-back{
+    background-color: #51A7E3;
+}
+
 .orange-back{
     background-color: #EA833D;
     height: 0;
@@ -144,6 +161,19 @@ video{
 
 .orange-back-3{
     background-color: #E95513;
+}
+
+.grass-back{
+    background-color: #D9DB2C;
+    height: 0;
+}
+
+.blue-back{
+    background-color: #0055B8;
+}
+
+#indicator-bar.blue-back{
+    background-color: #0075C9;
 }
 
 #indicator-bar.orange-back-3{
@@ -471,7 +501,7 @@ video{
 
 #bm-2{
     height: 120px;
-} 
+}
 
 @keyframes btnmove{
 	0% {
@@ -503,10 +533,15 @@ video{
 .progress{
     height: 4px;
 }
+
 .progress-bar{
     height: 4px;
     width: 0;
     background-color: #FFE400;
+}
+
+#fencing .progress-bar{
+    background-color: #0075C9;
 }
 
 #page-down{
@@ -563,6 +598,15 @@ video{
     margin: 16px 0;
 }
 
+#fencing #cover-subtitle{
+    text-shadow: none;
+    font-weight: bold;
+}
+
+#fencing h1{
+    font-weight: normal;
+}
+
 @media screen and (max-width: 768px){
     #taekwondo{
         background-image: url('../assets/bg.jpg');
@@ -570,8 +614,14 @@ video{
     #gymnastics{
         background-image: url('../assets/gym-bg.png');
     }
+    #fencing{
+        background-image: url('../assets/fencing-bg.jpg');
+    }
     .box-container img{
         margin-top: 16px;
+    }
+    #fencing .box-container img{
+        margin-bottom: 16px;
     }
     
     h2{

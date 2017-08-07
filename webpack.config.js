@@ -10,7 +10,11 @@ module.exports = {
     entry: {
         bundle: './src/index.js',
         gymnastics: './src/gymnastics.js',
-        vendor: ["jquery"],
+        fencing: './src/fencing.js',
+        jquery: ["jquery"],
+        fullpagejs: ['fullpage.js'],
+        lazysizes: ['lazysizes'],
+        bodymovin: ['bodymovin']
     },
     output: {
         path: path.join(__dirname, 'dist'),
@@ -75,19 +79,23 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             debug: !prod_state,
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor"
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "vendor"
+        // }),
         new HtmlWebpackPlugin({
             template: 'src/index.html',
             filename: 'index.html',
-            chunks: ['vendor', 'bundle'],
-            // chunksSortMode: 'manual'
+            chunks: ['jquery', 'fullpagejs',  'lazysizes', 'bundle'],
         }),
         new HtmlWebpackPlugin({
             template: 'src/gymnastics.html',
             filename: 'gymnastics.html',
-            chunks: ['vendor', 'gymnastics'],
+            chunks: ['jquery', 'fullpagejs',  'lazysizes', 'bodymovin','gymnastics'],
+        }),
+        new HtmlWebpackPlugin({
+            template: 'src/fencing.html',
+            filename: 'fencing.html',
+            chunks: ['jquery', 'fullpagejs',  'lazysizes', 'fencing'],
         }),
         new ExtractTextWebpackPlugin({
             filename: 'css/[name].[contenthash].css'

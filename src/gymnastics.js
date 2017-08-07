@@ -99,6 +99,7 @@ $(document).ready(function(){
 
     if(w <= 768){
         $('video').css('width', w + 'px')
+        $('#movie-10').css('width', '100%')
         $('#movie-4 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video1.mp4')
         $('#movie-5 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video3.mp4')
         $('#movie-6 source').attr('data-src', 'http://p3.udn.com.tw/universide_taipei_2017/gymnastics/mobile/video4.mp4')
@@ -331,6 +332,7 @@ $(document).ready(function(){
                 }, 100)
             }
             if(index == 10){
+                $('#movie-10').get(0).play()
                 $('#section-11 .box-container').css('transform', 'translate(0, 50px)')
             }
             if(index == 11){

@@ -230,6 +230,12 @@ $(document).ready(function(){
             if(index == 15){
                 $('#section-14 .popup').css('transform', 'translate(0, 100px)')
             }
+            if(index == 16){
+                $('#page-down').css('opacity', 1)
+            }
+            if(index == 17){
+                $('#comment-pannel').toggleClass('open')
+            }
         },
         onLeave: function(index, nextIndex, direction){
 
@@ -324,6 +330,12 @@ $(document).ready(function(){
             }
             if(index == 15){
                 $('#section-14 .popup').css('transform', 'translate(0, 0)')
+            }
+            if(index == 16 && direction == 'down'){
+                $('#page-down').css('opacity', 0)
+            }
+            if(index == 17){
+                $('#msg').toggleClass('close')
             }
 
         }

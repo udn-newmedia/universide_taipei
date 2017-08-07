@@ -86,16 +86,19 @@ module.exports = {
             template: 'src/index.html',
             filename: 'index.html',
             chunks: ['jquery', 'fullpagejs',  'lazysizes', 'bundle'],
+            chunksSortMode: 'manual'
         }),
         new HtmlWebpackPlugin({
             template: 'src/gymnastics.html',
             filename: 'gymnastics.html',
             chunks: ['jquery', 'fullpagejs',  'lazysizes', 'bodymovin','gymnastics'],
+            chunksSortMode: 'manual'
         }),
         new HtmlWebpackPlugin({
             template: 'src/fencing.html',
             filename: 'fencing.html',
             chunks: ['jquery', 'fullpagejs',  'lazysizes', 'fencing'],
+            chunksSortMode: 'manual'
         }),
         new ExtractTextWebpackPlugin({
             filename: 'css/[name].[contenthash].css'

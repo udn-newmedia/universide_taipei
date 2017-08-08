@@ -701,6 +701,10 @@ video{
         background-image: url('../assets/gym-bg-web.png');
         background-size: auto 100%;
     }
+    #fencing{
+        background-image: url('../assets/fencing-bg-web.jpg');
+        background-size: auto 100%;
+    }
     #cover-box{
 	    flex-grow: 4; 
     }
@@ -771,6 +775,9 @@ video{
 		margin-top: 10px;
 	}
 	#taekwondo #section-4 .container, #taekwondo #section-5 .container, #taekwondo #section-6 .container, #taekwondo #section-9 .container, #taekwondo #section-11 .container, #taekwondo #section-12 .container, #taekwondo #section-14 .container, #taekwondo #section-16 .container{
+		width: 600px;
+    }
+    #fencing #section-6 .container, #fencing #section-7 .container, #fencing #section-9 .container, #fencing #section-11 .container, #fencing #section-12 .container, #fencing #section-14 .container{
 		width: 600px;
 	}
 	.fl{

@@ -72,7 +72,7 @@ $(document).ready(function(){
     var h = $(window).height()
 
     var timetemp
-
+    var index_now = 1
     var bar_witdh = 0
 
 	if(w <= 768){
@@ -84,6 +84,13 @@ $(document).ready(function(){
 		$('video').css('width', '600px')
         $('video').css('height', '500px')
         $('#movie-6').css('height', '333.33px')
+        $('#head').hover(function(){
+            $(this).css('opacity', 1)
+        }, function(){
+            if(index_now != 1){
+                $(this).css('opacity', 0)
+            }
+        })
 	}
     
 
@@ -118,17 +125,11 @@ $(document).ready(function(){
         $('#cover-v hr').css('width', '100%')
     }, 300)
 
-     $('#head').hover(function(){
-        $(this).css('opacity', 1)
-    }, function(){
-        $(this).css('opacity', 0)
-    })
-
     $('#fullpage').fullpage({
         navigation: false,    	
 		scrollOverflow : true,
     	afterLoad: function(anchorLink, index){
-           
+            index_now = index
             timetemp = setTimeout(function(){
                 $('#page-down .fa').css('animation-name', 'btnmove')
             }, 3000)

@@ -73,18 +73,25 @@ $(document).ready(function(){
     const w = $(window).width()
     const h = $(window).height()
     var timetemp
+    var index_now = 1
 
     if(w <= 768){
 		$('video').css('width', w + 'px')
         $('video').css('height', w * 600 / 720 + 'px')
+        $('#movie-4').css('width', '100%')
+        $('#movie-4').css('height', 'auto')
 	}
 	else{
 		$('video').css('width', '600px')
         $('video').css('height', '500px')
+        $('#movie-4').css('width', '420px')
+        $('#movie-4').css('height', '280px')
         $('#head').hover(function(){
             $(this).css('opacity', 1)
         }, function(){
-            $(this).css('opacity', 0)
+            if(index_now != 1){
+                $(this).css('opacity', 0)
+            }
         })
 	}
     
@@ -124,6 +131,7 @@ $(document).ready(function(){
         navigation: false,    	
         scrollOverflow : true,
         afterLoad: function(anchorLink, index){
+            index_now = index
             timetemp = setTimeout(function(){
                 $('#page-down .fa').css('animation-name', 'btnmove')
             }, 3000)
@@ -163,7 +171,7 @@ $(document).ready(function(){
             if(index == 4){
                 
                 $('#section-3 .box-container').css('transform', 'translate(0, 50px)')
-
+                $('#movie-4').get(0).play()
                 $('#section-4 .box-container').css('opacity', 1)
                 $('#section-4 .box-container').css('transform', 'translate(0, 0)')
 

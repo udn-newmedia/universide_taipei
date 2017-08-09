@@ -603,7 +603,7 @@ video{
 }
 
 #cover-v hr{
-    height: 2px;
+    height: 1px;
     margin: 0 auto;
     width: 1px;
     background: rgba(255, 255, 255, 0.6);
@@ -641,13 +641,13 @@ video{
 }
 
 .light-orange-board{
-    background-color: #F39800;
-    border: solid 5px #F39800;
+    background-color: #A18201;
+    border: solid 5px #A18201;
 }
 
 .light-orange-board-web{
-    background-color: #F39800;
-    border: solid 3px #F39800;
+    background-color: #A18201;
+    border: solid 3px #A18201;
 }
 
 .red-board{
@@ -738,6 +738,9 @@ video{
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+    .v-center-s{
+        margin-top: -50px;
     }
 }
 

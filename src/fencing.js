@@ -82,10 +82,19 @@ $(document).ready(function(){
         $('#movie-4').css('height', 'auto')
 	}
 	else{
-		$('video').css('width', '600px')
-        $('video').css('height', '500px')
-        $('#movie-4').css('width', '420px')
-        $('#movie-4').css('height', '280px')
+        if(h <= 768){
+            $('video').css('width', '510px')
+            $('video').css('height', '420px')
+            $('#movie-4').css('width', '420px')
+            $('#movie-4').css('height', '280px')
+        }
+        else{
+            $('video').css('width', '600px')
+            $('video').css('height', '500px')
+            $('#movie-4').css('width', '420px')
+            $('#movie-4').css('height', '280px')
+        }
+		
         $('#head').hover(function(){
             $(this).css('opacity', 1)
         }, function(){

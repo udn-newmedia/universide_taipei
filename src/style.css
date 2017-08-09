@@ -112,6 +112,10 @@ video{
     transition: all 0.7s ease;    
 }
 
+.back.yellow-back{
+    bottom: 50px;
+}
+
 .yellow-bar-back{
     background-color: #FFB81F;
 }
@@ -676,6 +680,7 @@ video{
 }
 
 @media screen and (max-width: 767px){
+    
     #taekwondo{
         background-image: url('../assets/bg.jpg');
     }
@@ -693,7 +698,7 @@ video{
     }
     
     h2{
-        margin-top: 32px;
+        margin-top: 0;
         margin-bottom: 16px;
     }
     p{
@@ -734,14 +739,23 @@ video{
     .mt-s{
         margin-top: -64px;
     }
-    .v-center-m{
+    .popup{
+        padding-top: 32px;
+    }
+     .v-center-m{
         display: flex;
         align-items: center;
         justify-content: center;
     }
-    .v-center-s{
-        margin-top: -50px;
+    .flex-layout{
+        padding-bottom: 32px;
     }
+    #editor{
+        margin-top: 16px;
+    }
+    /* .v-center-s{
+        margin-top: -50px;
+    }  */
 }
 
 @media screen and (max-width: 350px){

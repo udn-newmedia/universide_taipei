@@ -157,7 +157,9 @@ $(document).ready(function(){
 
     $('#fullpage').fullpage({
         navigation: false,    	
-		scrollOverflow : true,
+        scrollOverflow : true,
+        // paddingTop: '50px',
+        paddingBottom: '50px',
     	afterLoad: function(anchorLink, index){
             index_now = index
             timetemp = setTimeout(function(){
@@ -379,9 +381,10 @@ $(document).ready(function(){
     });
 
     $('.fp-section').css('transition', 'all .7s ease-in-out')
-    if(isFacebookApp() && detectiOS()){
-        $('.fp-section').css('height', temp_h + 'px')
-        $('.v-center').addClass('v-center-m')
-    }
+    // $('.fp-section').css('padding-top', '50px')
+    // if(isFacebookApp() && detectiOS()){
+        
+        // $('.v-center').addClass('v-center-m')
+    // }
 
 })

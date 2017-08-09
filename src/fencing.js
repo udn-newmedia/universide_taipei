@@ -6,6 +6,23 @@ import 'fullpage.js'
 var progress = [null, null, null, null, null, null, null, null, null, null];
 var movie_progress = 0;
 
+function isFacebookApp() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+}
+
+function detectiOS() {
+	 if( navigator.userAgent.match(/iPhone/i)
+	 || navigator.userAgent.match(/iPad/i)
+	 ){
+		return true;
+	  }
+	 else {
+		return false;
+	  }
+}
+
+
 function moviePlay(id){
     $('#movie-' + id).get(0).play();
     
@@ -75,11 +92,16 @@ $(document).ready(function(){
     var timetemp
     var index_now = 1
 
+    var temp_h = h - 128
+
     if(w <= 768){
-		$('video').css('width', w + 'px')
-        $('video').css('height', w * 600 / 720 + 'px')
-        $('#movie-4').css('width', '100%')
-        $('#movie-4').css('height', 'auto')
+        if(w < 768){
+            $('video').css('width', w + 'px')
+            $('video').css('height', w * 600 / 720 + 'px')
+            $('#movie-4').css('width', '100%')
+            $('#movie-4').css('height', 'auto')
+        }
+		
 	}
 	else{
         if(h <= 768){
@@ -168,7 +190,6 @@ $(document).ready(function(){
                 $('#cover-v h1').css('transform', 'translate(0, 50px)')
                 $('#cover-v hr').css('width', '0')
                 $('#section-3 .box-container').css('transform', 'translate(0, 50px)')
-                $('#page-down').css('opacity', 1)
             }
             if(index == 3){
                 $('#fixed-back').css('background-color', '#000000')
@@ -248,7 +269,7 @@ $(document).ready(function(){
                 $('#section-14 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 16){
-                $('#page-down').css('opacity', 1)
+                $('#page-down').css('opacity', 0.7)
             }
             if(index == 17){
                 $('#comment-pannel').toggleClass('open')
@@ -360,5 +381,9 @@ $(document).ready(function(){
     })
 
     $('.fp-section').css('transition', 'all .7s ease-in-out')
+    if(isFacebookApp() && detectiOS()){
+        $('.fp-section').css('height', temp_h + 'px')
+        $('.v-center').addClass('v-center-m')
+    }
 
 })

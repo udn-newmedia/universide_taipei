@@ -6,6 +6,22 @@ import 'lazysizes'
 var progress = [null, null, null, null, null, null, null, null, null, null];
 var movie_progress = 0;
 
+function isFacebookApp() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+}
+
+function detectiOS() {
+	 if( navigator.userAgent.match(/iPhone/i)
+	 || navigator.userAgent.match(/iPad/i)
+	 ){
+		return true;
+	  }
+	 else {
+		return false;
+	  }
+}
+
 function moviePlay(id){
     $('#movie-' + id).get(0).play();
     
@@ -75,10 +91,15 @@ $(document).ready(function(){
     var index_now = 1
     var bar_witdh = 0
 
+    var temp_h = h - 128
+
 	if(w <= 768){
-		$('video').css('width', w + 'px')
-        $('video').css('height', w * 600 / 720 + 'px')
-        $('#movie-6').css('height', w * 400 / 720 + 'px')
+        if( w < 768){
+            $('video').css('width', w + 'px')
+            $('video').css('height', w * 600 / 720 + 'px')
+            $('#movie-6').css('height', w * 400 / 720 + 'px')
+        }
+		
 	}
 	else{
         if(h <= 768){
@@ -165,7 +186,6 @@ $(document).ready(function(){
                 $('#cover-v h1').css('transform', 'translate(0, 50px)')
                 $('#cover-v hr').css('width', '0')
                 $('#section-3 .box-container').css('transform', 'translate(0, 50px)')
-                $('#page-down').css('opacity', 1)
             }
             if(index == 3){
                 $('#fixed-back').css('background-color', '#000000')
@@ -240,7 +260,7 @@ $(document).ready(function(){
                 $('#section-16 .popup').css('transform', 'translate(0, 100px)')
             }
             if(index == 18){
-                $('#page-down').css('opacity', 1)
+                $('#page-down').css('opacity', 0.7)
             }
             if(index == 19){
                 $('#comment-pannel').toggleClass('open')
@@ -253,7 +273,9 @@ $(document).ready(function(){
             $('#page-down .fa').css('animation-name', '')
             clearTimeout(timetemp)
             if(index == 1){
-                $('#head').css('opacity', 0)
+                if(w > 768){
+                    $('#head').css('opacity', 0)
+                }
             }
             if(index == 2 && direction == 'up'){
                 // $('#page-down').css('opacity', 0)
@@ -357,5 +379,9 @@ $(document).ready(function(){
     });
 
     $('.fp-section').css('transition', 'all .7s ease-in-out')
+    if(isFacebookApp() && detectiOS()){
+        $('.fp-section').css('height', temp_h + 'px')
+        $('.v-center').addClass('v-center-m')
+    }
 
 })

@@ -7,6 +7,23 @@ import bodymovin from 'bodymovin'
 var progress = [null, null, null, null, null, null, null, null, null];
 var movie_progress = 0;
 
+function isFacebookApp() {
+    var ua = navigator.userAgent || navigator.vendor || window.opera;
+    return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
+}
+
+function detectiOS() {
+	 if( navigator.userAgent.match(/iPhone/i)
+	 || navigator.userAgent.match(/iPad/i)
+	 ){
+		return true;
+	  }
+	 else {
+		return false;
+	  }
+}
+
+
 function moviePlay(id){
     $('#movie-' + id).get(0).play();
     
@@ -96,6 +113,8 @@ $(document).ready(function(){
     const w = $(window).width()
     const h = $(window).height()
     var timetemp
+
+    var temp_h = h - 128
 
     if(w <= 768){
         $('video').css('width', w + 'px')
@@ -384,7 +403,9 @@ $(document).ready(function(){
             $('#page-down .fa').css('animation-name', '')
             clearTimeout(timetemp)
             if(index == 1){
-                $('#head').css('opacity', 0)
+                if(w > 768){
+                    $('#head').css('opacity', 0)
+                }
             }
             if(index == 2 && direction == 'down'){
                 $('#section-3 .orange-back').css('height', '100vh')
@@ -473,5 +494,9 @@ $(document).ready(function(){
     })
 
     $('.fp-section').css('transition', 'all .7s ease-in-out')
+    if(isFacebookApp() && detectiOS()){
+        $('.fp-section').css('height', temp_h + 'px')
+        $('.v-center').addClass('v-center-m')
+    }
 
 })

@@ -138,8 +138,12 @@ video{
     background-color: #FFCE00;
 }
 
-#head.yellow-back-2{
-    background-color: #FFCE00;
+.yellow-back-4{
+    background-color: #CFA702;
+}
+
+#head.yellow-back-4{
+    background-color: #CFA702;
 }
 
 .menu-blue-back{
@@ -338,14 +342,43 @@ video{
     transition: all 0.7s ease;
     opacity: 0;
     z-index: 10000;
+    box-shadow: 0px 3px 7px 0 rgba(0, 0, 0, 0.1);
 }
 
 #head.open{
     opacity: 1;
 }
 
+.card-4{
+    margin-top: -50px;
+    padding: 0 20px;
+    flex: 4 4;
+}
+
+.card-4 a{
+    color: #000000;
+}
+
+.card-4 .row{
+    margin: 0;
+}
+
+.card-4 p{
+    margin-bottom: 20px;
+}
+
+.card-4 .col-xs-6 .pl-0{
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+.card-4 .col-xs-6 .pr-0{
+    padding-right: 0;
+    padding-left: 10px;
+}
+
 .card{
-    flex: 1 1 100px;
+    flex: 1 1;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -452,11 +485,11 @@ video{
 
 .pl-0{
     padding-left: 0;
-    padding-right: 10px;
+    padding-right: 5px;
 }
 
 .pr-0{
-    padding-left: 10px;
+    padding-left: 5px;
     padding-right: 0;
 }
 
@@ -607,7 +640,42 @@ video{
     font-weight: normal;
 }
 
-@media screen and (max-width: 768px){
+.light-orange-board{
+    background-color: #F39800;
+    border: solid 5px #F39800;
+}
+
+.light-orange-board-web{
+    background-color: #F39800;
+    border: solid 3px #F39800;
+}
+
+.red-board{
+    background-color: #BB5006;
+    border: solid 5px #BB5006;
+}
+
+.red-board-web{
+    background-color: #BB5006;
+    border: solid 3px #BB5006;
+}
+
+.blue-board{
+    background-color: #0068B7;
+    border: solid 5px #0068B7;
+}
+
+.blue-board-web{
+    background-color: #0068B7;
+    border: solid 3px #0068B7;
+}
+
+.col-xs-12{
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767px){
     #taekwondo{
         background-image: url('../assets/bg.jpg');
     }
@@ -636,6 +704,8 @@ video{
     }
     .f-video-contain .img-say{
         padding-left: 20px;
+        padding-right: 20px;
+        margin-top: -15px;
     }
     #cover-title{
         font-size: 26px;
@@ -689,12 +759,92 @@ video{
         width: calc(100% - 60px);
         padding: 30px 30px;
     }
+    #page-down{
+        display: none;
+    }
 }
 
-@media screen and (min-width: 961px) and (max-width: 1280px){
-
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    
     #taekwondo{
-		background-image: url('../assets/bg-web.png');
+        background-image: url('../assets/bg.jpg');
+    }
+    #gymnastics{
+        background-image: url('../assets/gym-bg.png');
+    }
+    #fencing{
+        background-image: url('../assets/fencing-bg.jpg');
+    }
+    .box-container img{
+        margin-top: 16px;
+    }
+    #fencing .box-container img{
+        margin-bottom: 16px;
+    }
+    h1{
+        text-align: left;
+        margin-top: 0;
+    }
+    
+    h2{
+        margin-top: 32px;
+        margin-bottom: 16px;
+    }
+    p{
+        line-height: 27px;
+    }
+    .f-video-contain{
+        width: calc(100% - 200px);
+        margin: 0 auto 16px auto;
+    }
+    .f-video-contain .img-say{
+        margin-top: -15px;
+    }
+    .v-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #cover-title{
+        font-size: 26px;
+        transition: all 0.7s ease;
+        opacity: 0;
+        transform: translate(0, 50px);
+    }
+    #cover-box{
+	    flex-grow: 4; 
+    }
+    #cover-box-2{
+        flex-grow: 1;
+    }
+
+    .share-block{
+        margin-top: 32px;
+    }
+
+    .logo-block{
+        margin-left: 0px;
+    }
+
+    .mobile-mt-32{
+        margin-top: 32px;
+    }
+    .mt-s{
+        margin-top: -64px;
+    }
+    .v-center-m{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1280px){
+    #icon{
+        text-align: left;
+    }
+    #taekwondo{
+		background-image: url('../assets/bg-web-6.jpg');
 		background-size: auto 100%;
     }
     #gymnastics{
@@ -815,8 +965,14 @@ video{
     #head:hover .banner-contain img{
         height: 111px;
     }
+    #head:hover .banner-text{
+        margin-top: 0;
+    }
     #comment-pannel{
         width: 40%;
+    }
+    #relate-contain a{
+        color: #000000;
     }
     .banner-contain{
         height: 50px;
@@ -840,8 +996,9 @@ video{
         line-height: 2;
         letter-spacing: -0.3px;
         text-align: left;
-        color: #57543d;
+        color: #41403B;
         margin-top: 9px;
+        transition: all 0.7s ease;
     }
     #relate-contain p{
         margin-top: 5px;
@@ -878,6 +1035,13 @@ video{
     }
     .fb-comment-block.container{
         width: 100%;
+    }
+    #relate-contain .row{
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .col-md-3{
+        padding: 0 10px;
     }
 }
 
@@ -941,7 +1105,7 @@ video{
 		width: 600px;
     	margin: 0 auto;
     	margin-bottom: 32px;
-	}
+    }
 
 	#msg{
         top: 8px;
@@ -1005,6 +1169,9 @@ video{
     #head:hover .banner-contain img{
         height: 111px;
     }
+    #head:hover .banner-text{
+        margin-top: 0;
+    }
     #comment-pannel{
         width: 40%;
     }
@@ -1030,8 +1197,12 @@ video{
         line-height: 2;
         letter-spacing: -0.3px;
         text-align: left;
-        color: #57543d;
+        color: #41403B;
         margin-top: 9px;
+        transition: all 0.7s ease;
+    }
+    #relate-contain a{
+        color: #000000;
     }
     #relate-contain p{
         margin-top: 5px;
@@ -1068,5 +1239,12 @@ video{
     }
     .fb-comment-block.container{
         width: 100%;
+    }
+    #relate-contain .row{
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .col-md-3{
+        padding: 0 10px;
     }
 }
